@@ -1,0 +1,191 @@
+<!--<!DOCTYPE html>
+<html>
+    <head>
+        <title>slibling tarversal</title>
+        <script src="JQuery.js"></script>
+        <style>
+            .highlight
+            {
+                background-color: yellow; 
+            }
+        </style>
+        <script>
+            $(document).ready(function()
+        {
+            $("#btn").click(function()
+        {
+            $("#c2").siblings().addClass("highlight");
+        })
+
+         $("#btn").click(function()
+        {
+            $("#c2").siblings("p").addClass("highlight");
+        })
+        })
+
+        </script>
+    </head>
+    <body>
+        <div id="parent" class="box">
+            <p id="c1">hello  </p>
+            <p id="c2">krishna</p>
+            <p id="c3">radha</p>
+            <div>another child</div>
+        </div>
+        <button id="btn">click here</button>   
+     </body>
+</html>
+    -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete DOM Traversing Demo</title>
+    <script src="JQuery.js"></script>
+    <style>
+        .box { border: 1px solid gray; padding: 10px; margin: 5px; }
+        .highlight { background-color: yellow; }
+        .highlight2 { background-color: lightgreen; }
+        .highlight3 { background-color: lightblue; }
+        .outer { border: 2px solid black; padding: 10px; margin: 5px; }
+        .stop { border: 2px solid red; padding: 10px; margin: 5px; }
+    </style>
+    <script>
+        $(document).ready(function(){
+
+            // ========== Parents Traversing ==========
+            $("#btnParent").click(function(){
+                $("#child1").parent().addClass("highlight");
+            });
+
+            $("#btnClosest").click(function(){
+                $("#child2").closest(".outer").addClass("highlight2");
+            });
+
+            $("#btnParents").click(function(){
+                $("#child2").parents().addClass("highlight3");
+            });
+
+            $("#btnParentsUntil").click(function(){
+                $("#child2").parentsUntil(".stop").addClass("highlight");
+            });
+
+            // ========== Children Traversing ==========
+            $("#btnChildren").click(function(){
+                $("#parentBox").children().addClass("highlight");
+            });
+
+            $("#btnFind").click(function(){
+                $("#parentBox").find("p").addClass("highlight2");
+            });
+
+            $("#btnFirst").click(function(){
+                $("#parentBox").children().first().addClass("highlight");
+            });
+
+            $("#btnLast").click(function(){
+                $("#parentBox").children().last().addClass("highlight");
+            });
+
+            $("#btnEq").click(function(){
+                $("#parentBox").children().eq(1).addClass("highlight");
+            });
+
+            $("#btnNot").click(function(){
+                $("#parentBox").children().not("div").addClass("highlight");
+            });
+
+            $("#btnFilter").click(function(){
+                $("#parentBox").children("p").addClass("highlight2");
+            });
+
+            // ========== Siblings Traversing ==========
+            $("#btnSiblings").click(function(){
+                $("#childSib2").siblings().addClass("highlight");
+            });
+
+            $("#btnNext").click(function(){
+                $("#childSib2").next().addClass("highlight2");
+            });
+
+            $("#btnNextAll").click(function(){
+                $("#childSib2").nextAll().addClass("highlight3");
+            });
+
+            $("#btnNextUntil").click(function(){
+                $("#childSib2").nextUntil("#childSib5").addClass("highlight");
+            });
+
+            $("#btnPrev").click(function(){
+                $("#childSib2").prev().addClass("highlight2");
+            });
+
+            $("#btnPrevAll").click(function(){
+                $("#childSib2").prevAll().addClass("highlight3");
+            });
+
+            $("#btnPrevUntil").click(function(){
+                $("#childSib4").prevUntil("#childSib2").addClass("highlight");
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<h2>Parents Traversing</h2>
+<div class="outer stop">
+    Outer Div (stop)
+    <div class="outer">
+        Inner Div
+        <p id="child1">Child 1</p>
+        <p id="child2">Child 2</p>
+    </div>
+</div>
+
+<button id="btnParent">Parent of Child1</button>
+<button id="btnClosest">Closest .outer of Child2</button>
+<button id="btnParents">All Parents of Child2</button>
+<button id="btnParentsUntil">Parents Until .stop of Child2</button>
+
+<hr>
+
+<h2>Children Traversing</h2>
+<div id="parentBox" class="box">
+    Parent Box
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <div>
+        Inner Div
+        <p>Paragraph 3</p>
+    </div>
+</div>
+
+<button id="btnChildren">Highlight Direct Children</button>
+<button id="btnFind">Highlight All Paragraphs (Find)</button>
+<button id="btnFirst">Highlight First Child</button>
+<button id="btnLast">Highlight Last Child</button>
+<button id="btnEq">Highlight Second Child</button>
+<button id="btnNot">Highlight All Children Except Divs</button>
+<button id="btnFilter">Highlight Only Paragraph Children</button>
+
+<hr>
+
+<h2>Siblings Traversing</h2>
+<div id="siblingBox" class="box">
+    <p id="childSib1">Sibling 1</p>
+    <p id="childSib2">Sibling 2</p>
+    <p id="childSib3">Sibling 3</p>
+    <p id="childSib4">Sibling 4</p>
+    <p id="childSib5">Sibling 5</p>
+</div>
+
+<button id="btnSiblings">All Siblings of Child2</button>
+<button id="btnNext">Next Sibling of Child2</button>
+<button id="btnNextAll">All Next Siblings of Child2</button>
+<button id="btnNextUntil">Next Siblings Until Child5</button>
+<button id="btnPrev">Previous Sibling of Child2</button>
+<button id="btnPrevAll">All Previous Siblings of Child2</button>
+<button id="btnPrevUntil">Previous Siblings Until Child2</button>
+
+</body>
+</html>

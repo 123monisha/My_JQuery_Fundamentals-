@@ -1,0 +1,141 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Children Example</title>
+    <script src="JQuery.js"></script>
+    <style>
+        .highlight { background-color: yellow; }
+        .box { border: 1px solid gray; padding: 10px; margin: 5px; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btnChildren").click(function(){
+                $("#parent").children().addClass("highlight");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="parent" class="box">
+        Parent Div
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <div>
+            Inner Div
+            <p>Paragraph 3 (not direct child)</p>
+        </div>
+    </div>
+
+    <button id="btnChildren">Highlight Direct Children</button>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Example</title>
+    <script src="JQuery.js"></script>
+    <style>
+        .highlight { background-color: lightgreen; }
+        .box { border: 1px solid gray; padding: 10px; margin: 5px; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#btnFind").click(function(){
+                $("#parent").find("p").addClass("highlight");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="parent" class="box">
+        Parent Div
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <div>
+            Inner Div
+            <p>Paragraph 3 (descendant)</p>
+        </div>
+    </div>
+
+    <button id="btnFind">Highlight All Paragraphs</button>
+
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Children Traversing Demo</title>
+    <script src="JQuery.js"></script>
+    <style>
+        .box { border: 1px solid gray; padding: 10px; margin: 5px; }
+        .highlight { background-color: yellow; }
+        .highlight2 { background-color: lightgreen; }
+    </style>
+    <script>
+        $(document).ready(function(){
+
+            // 1️⃣ Highlight all direct children
+            $("#btnChildren").click(function(){
+                $("#parent").children().addClass("highlight");
+            });
+
+            // 2️⃣ Highlight all descendants using find()
+            $("#btnFind").click(function(){
+                $("#parent").find("p").addClass("highlight2");
+            });
+
+            // 3️⃣ Highlight first direct child
+            $("#btnFirst").click(function(){
+                $("#parent").children().first().addClass("highlight");
+            });
+
+            // 4️⃣ Highlight last direct child
+            $("#btnLast").click(function(){
+                $("#parent").children().last().addClass("highlight");
+            });
+
+            // 5️⃣ Highlight second child (index 1)
+            $("#btnEq").click(function(){
+                $("#parent").children().eq(1).addClass("highlight");
+            });
+
+            // 6️⃣ Highlight all children except divs
+            $("#btnNot").click(function(){
+                $("#parent").children().not("div").addClass("highlight");
+            });
+
+            // 7️⃣ Filter: highlight only <p> children
+            $("#btnFilter").click(function(){
+                $("#parent").children("p").addClass("highlight2");
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <div id="parent" class="box">
+        Parent Div
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <div>
+            Inner Div
+            <p>Paragraph 3 (descendant)</p>
+        </div>
+    </div>
+
+    <button id="btnChildren">Highlight Direct Children</button>
+    <button id="btnFind">Highlight All Paragraphs (Find)</button>
+    <button id="btnFirst">Highlight First Child</button>
+    <button id="btnLast">Highlight Last Child</button>
+    <button id="btnEq">Highlight Second Child (Index 1)</button>
+    <button id="btnNot">Highlight All Children Except Divs</button>
+    <button id="btnFilter">Highlight Only Paragraph Children</button>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events</title>
+        <script src="JQuery.js"></script>
+        <script>
+            $(document).ready(function(){
+               /* $("#btn").click(function()//this is click event
+            {
+                $("#para").text("Hare Raama ")
+            });
+            });
+
+            $("#btn").hover(function()
+        {
+            $("#para").text("hare raam")
+        });*/
+
+
+        $("#btn").focus(function()
+    {
+            $(this).css("border", "2px solid green");
+    });
+    $("#txt").blur(function(){
+                $(this).css("border", "");
+            });
+    });
+        </script>
+    </head>
+    <body>
+        <button id="btn">click me</button>
+        <p id="para">Hello krishna!!!......</p>
+    </body>
+</html>

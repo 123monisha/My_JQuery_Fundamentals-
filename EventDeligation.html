@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Event Delegation</title>
+    <script src="JQuery.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <button class="dynamicBtn">Click Me</button>
+    </div>
+
+    <button id="btnAdd">Add New Button</button>
+
+    <script>
+        $(document).ready(function(){
+            // Event delegation
+            $(document).on("click", ".dynamicBtn", function(){
+                alert("Button clicked!");
+            });
+
+            // Add new button dynamically
+            $("#btnAdd").click(function(){
+                $("#container").append('<button class="dynamicBtn">New Button</button>');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chaining Example</title>
+    <script src="JQuery.js"></script>
+</head>
+<body>
+
+<p id="para">Hello Radha, this is chaining demo!</p>
+<button id="btn">Click Me</button>
+
+<script>
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $("#para")
+            .css("color", "red")      // change color to red
+            .slideUp(1000)            // hide slowly
+            .slideDown(1000);         // show again slowly
+    });
+});
+</script>
+
+</body>
+</html>

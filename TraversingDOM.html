@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>traversing dom</title>
+        <script src="JQuery.js"></script>
+        <style>
+            
+            .highlight { background-color: yellow; }
+            .outer { border: 2px solid black; padding:10px; margin:5px; }
+        </style>
+        <script>
+            $(document).ready(function(){
+            $("#btn").click(function(){
+                $("#child").parent().addClass("highlight");
+            });
+
+           /* $("#btnClosest").click(function(){
+                $("#inner").closest(".outer").addClass("highlight");
+            });*/
+
+            $("#btnClosest").click(function(){
+                $("#inner").parentsUntil(".stop").addClass("highlight");
+            });
+        });
+
+        </script>
+    </head>
+    <body>
+        <div style="padding: 10px; border: 1px solid gray; margin: 5px;">
+            hello radha!!!
+            <p id="child">hello krishna</p>
+
+        </div>
+        <button id="btn">click me</button>
+    
+       <!-- <div class="outer">
+        Outer Div
+        <div style="padding: 10px; border: 1px solid gray; margin: 5px;">
+            Inner Div
+            <p id="inner">Paragraph inside inner div</p>
+        </div>
+    </div>
+    <button id="btnClosest">Highlight Closest .outer</button>
+
+-->
+     <div  class="stop"  style="padding: 10px; border: 1px solid gray; margin: 5px;">1
+    <div class="outer">
+        Outer Div
+        <div style="padding: 10px; border: 1px solid gray; margin: 5px;">
+            Inner Div
+            <p id="inner">Paragraph inside inner div</p>
+        </div>
+    </div>
+    </div>
+    <button id="btnClosest">Highlight Closest .outer</button>
+
+    </body>
+</html>

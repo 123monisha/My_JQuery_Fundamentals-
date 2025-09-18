@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css manipulations</title>
+        <script src="JQuery.js"></script>
+        <style>
+        .highlight {
+            color: white;
+            background-color: green;
+            font-weight: bold;
+        }
+    </style>
+        <script>
+          $(document).ready(function()
+        {
+            $("#btn").click(function()
+        {
+            $("#p").css("color","white");
+            $("#p").css("background-color","blue");
+
+        });
+        $("#btnAdd").click(function(){
+                $("#para").addClass("highlight");
+            });
+            $("#btnRemove").click(function(){
+                $("#para").removeClass("highlight");
+            });
+        })
+        </script>
+    </head>
+
+    <body>
+        <p id="p">heelo hare krishna!!!!</p>
+        <button id="btn">click me</button>
+        <p id="para">This is a paragraph.</p>
+        <button id="btnAdd">Add Class</button>
+        <button id="btnRemove">Remove Class</button>
+    </body>
+</html>

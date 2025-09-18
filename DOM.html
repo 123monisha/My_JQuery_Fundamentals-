@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom manipulation</title>
+        <script src="JQuery.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#btn1").click(function(){
+                    $("#txt").text("<b>text was changed</b>");
+                    $("#html").html("<b>text was changed<b/>");
+                });
+
+                $("#btn2").click(function()
+            {
+                 $("#list").append("<li>append item</li>");
+                 
+            });
+             $("#btn3").click(function()
+            {
+                 $("#list").prepend("<li>prepend item</li>");
+                 
+            });
+
+            $("#btnRemove").click(function(){
+                $("#paraRemove").remove();
+            });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <h1>DOM Manipulations Task</h1>
+        <p id="txt">This is Paragraph1</p>
+        <p id="html">this is paragraph 2</p>
+        <button id="btn1">changing text/html</button>
+        <hr/>
+        <ul id="list">
+            <li>ITEM 1</li>
+            <li>item 2</li>
+             
+        </ul>
+        <button id="btn2">append item</button>
+            <button id="btn3">prepend item</button>
+           <hr/>
+
+        <p id="paraRemove">this paragraph will be removed</p>
+        <button id="btnRemove">click to remove paragraph</button>
+    </body>
+</html>

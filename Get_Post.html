@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery GET Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>.get() Example</h2>
+  <div id="result"></div>
+  <button id="btnGet">Get Data</button>
+
+  <script>
+    $(document).ready(function(){
+      $("#btnGet").click(function(){
+        $.get("data.html", function(response){
+          $("#result").html(response);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery POST Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h2>.post() Example</h2>
+  <input type="text" id="txtName" placeholder="Enter name">
+  <button id="btnPost">Send Data</button>
+  <div id="response"></div>
+
+  <script>
+    $(document).ready(function(){
+      $("#btnPost").click(function(){
+        $.post("server.aspx", { name: $("#txtName").val() }, function(response){
+          $("#response").html(response);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

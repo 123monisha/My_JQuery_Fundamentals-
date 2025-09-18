@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show / Hide / Toggle Example</title>
+    <script src="JQuery.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#btnHide").click(function(){
+                $("#box").hide(); // hides the box
+            });
+
+            $("#btnShow").click(function(){
+                $("#box").show(); // shows the box
+            });
+
+            $("#btnToggle").click(function(){
+                $("#box").toggle(); // toggles show/hide
+            });
+
+             $("#btnFadeOut").click(function(){
+                $("#box").fadeOut(); // fade out
+            });
+
+            $("#btnFadeIn").click(function(){
+                $("#box").fadeIn(); // fade in
+            });
+
+             $("#btnSlideUp").click(function(){
+                $("#box").slideUp(); // slide up to hide
+            });
+
+            $("#btnSlideDown").click(function(){
+                $("#box").slideDown(); // slide down to show
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h2>Show / Hide / Toggle Demo</h2>
+    <div id="box" style="width:200px;height:100px;background:lightblue;">Box</div>
+    <br/>
+    <button id="btnHide">Hide</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToggle">Toggle</button>
+    <button id="btnFadeOut">Fade Out</button>
+    <button id="btnFadeIn">Fade In</button>
+    <button id="btnSlideUp">Slide Up</button>
+    <button id="btnSlideDown">Slide Down</button>
+</body>
+</html>

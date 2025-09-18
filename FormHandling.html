@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form handling</title>
+        <script src="JQuery.js"></script>
+        <script>
+            $(document).ready(function()
+        {
+            $("#btnGet").click(function()
+        {
+            alert($("#txt1").val());
+        })
+
+         $("#btnSet").click(function()
+        {
+            $("#txt1").val("radha");
+        })
+        })
+
+        </script>
+    </head>
+    <body>
+        <input type="text" id="txt1" value="Monisha"><br/><br/>
+        <button id="btnGet">Get Name</button>
+        <button id="btnSet">Set Name</button>
+    </body>
+</html>

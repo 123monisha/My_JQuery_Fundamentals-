@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Load Example</title>
+    <script src="JQuery.js"></script>
+</head>
+<body>
+    <h2>Ajax .load() Demo</h2>
+
+    <div id="result" style="border:1px solid black; padding:10px; width:300px; height:100px;">
+        Content will be loaded here...
+    </div>
+    <br/>
+    <button id="btnLoad">Load Data</button>
+
+    <script>
+        $(document).ready(function(){
+            $("#btnLoad").click(function(){
+                $("#result").load("data.html");
+            });
+        });
+    </script>
+</body>
+</html>

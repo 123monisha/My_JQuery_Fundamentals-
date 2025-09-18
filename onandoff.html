@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery on/off Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="btn">Click Me</button>
+    <button id="removeHandler">Remove Handler</button>
+
+    <script>
+        $(document).ready(function(){
+            // Attach event
+            $("#btn").on("click", function(){
+                alert("Button Clicked!");
+            });
+
+            // Remove event when second button is clicked
+            $("#removeHandler").on("click", function(){
+                $("#btn").off("click");
+                alert("Click event removed from first button!");
+            });
+        });
+    </script>
+</body>
+</html>
